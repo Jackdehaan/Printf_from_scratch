@@ -6,7 +6,7 @@
 /*   By: jade-haa <jade-haa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 10:08:04 by jade-haa          #+#    #+#             */
-/*   Updated: 2024/09/29 10:26:28 by jade-haa         ###   ########.fr       */
+/*   Updated: 2024/09/29 10:46:19 by jade-haa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,27 +18,44 @@ int main()
     int num = 42;
     char *str = "Hello, world!";
     char ch = 'A';
-    int ret_ft, ret_std;
+    void *ptr = &num; // Example pointer
+    unsigned int u_num = 4294967295; // Large unsigned number
 
-    ret_ft = ft_printf("Custom ft_printf: %s\n", str);
-    ret_std = printf("Standard printf: %s\n", str);
-    printf("Return values - ft_printf: %d, printf: %d\n\n", ret_ft, ret_std);
+    // Test %s
+    ft_printf("Custom ft_printf (string): %s\n", str);
+    printf("Standard printf (string): %s\n", str);
 
-    ret_ft = ft_printf("Custom ft_printf: %c\n", ch);
-    ret_std = printf("Standard printf: %c\n", ch);
-    printf("Return values - ft_printf: %d, printf: %d\n\n", ret_ft, ret_std);
+    // Test %c
+    ft_printf("Custom ft_printf (char): %c\n", ch);
+    printf("Standard printf (char): %c\n", ch);
 
-    ret_ft = ft_printf("Custom ft_printf: %d\n", num);
-    ret_std = printf("Standard printf: %d\n", num);
-    printf("Return values - ft_printf: %d, printf: %d\n\n", ret_ft, ret_std);
+    // Test %d
+    ft_printf("Custom ft_printf (decimal): %d\n", num);
+    printf("Standard printf (decimal): %d\n", num);
 
-    ret_ft = ft_printf("Custom ft_printf: %x\n", num);
-    ret_std = printf("Standard printf: %x\n", num);
-    printf("Return values - ft_printf: %d, printf: %d\n\n", ret_ft, ret_std);
+    // Test %i
+    ft_printf("Custom ft_printf (integer): %i\n", num);
+    printf("Standard printf (integer): %i\n", num);
 
-    ret_ft = ft_printf("Custom ft_printf: 100%% done!\n");
-    ret_std = printf("Standard printf: 100%% done!\n");
-    printf("Return values - ft_printf: %d, printf: %d\n\n", ret_ft, ret_std);
+    // Test %u
+    ft_printf("Custom ft_printf (unsigned): %u\n", u_num);
+    printf("Standard printf (unsigned): %u\n", u_num);
+
+    // Test %x
+    ft_printf("Custom ft_printf (hex lowercase): %x\n", num);
+    printf("Standard printf (hex lowercase): %x\n", num);
+
+    // Test %X
+    ft_printf("Custom ft_printf (hex uppercase): %X\n", num);
+    printf("Standard printf (hex uppercase): %X\n", num);
+
+    // Test %p
+    ft_printf("Custom ft_printf (pointer): %p\n", ptr);
+    printf("Standard printf (pointer): %p\n", ptr);
+
+    // Test %%
+    ft_printf("Custom ft_printf (percent): %%\n");
+    printf("Standard printf (percent): %%\n");
 
     return 0;
 }
