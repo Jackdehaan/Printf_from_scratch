@@ -6,13 +6,13 @@
 /*   By: jade-haa <jade-haa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 12:17:49 by jade-haa          #+#    #+#             */
-/*   Updated: 2023/10/23 12:28:07 by jade-haa         ###   ########.fr       */
+/*   Updated: 2023/11/09 10:42:04 by jade-haa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putstring(va_list ap)
+int	ft_putstring_ap(va_list ap)
 {
 	char	*s;
 	int		i;
@@ -34,7 +34,7 @@ int	ft_putstring(va_list ap)
 	return (counter + i);
 }
 
-int	ft_putstring_ad(char *s)
+int	ft_putstring(char *s)
 {
 	unsigned int	i;
 

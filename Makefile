@@ -1,4 +1,4 @@
-LIBRARY_NAME = libftprintf.a 
+NAME = libftprintf.a 
 
 SRC_FILES = ft_printf.c ft_putchar.c ft_putnbr_base.c ft_putstring.c 
 
@@ -12,11 +12,11 @@ CFLAGS = -Wall -Werror -Wextra
 	$(CC) $(CFLAGS) -c $< -o $@
 
 
-$(LIBRARY_NAME): $(OBJ_FILES)
+$(NAME): $(OBJ_FILES)
 	ar rcs $@ $(OBJ_FILES)
 
 
-all: $(LIBRARY_NAME)
+all: $(NAME)
 
 
 clean:
@@ -24,9 +24,7 @@ clean:
 
 
 fclean: clean
-	rm -f $(LIBRARY_NAME)
+	rm -f $(NAME)
 
 
 re: fclean all
-
-.PHONY: all clean fclean re

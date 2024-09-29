@@ -6,7 +6,7 @@
 /*   By: jade-haa <jade-haa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 12:17:26 by jade-haa          #+#    #+#             */
-/*   Updated: 2023/10/23 12:25:54 by jade-haa         ###   ########.fr       */
+/*   Updated: 2023/11/09 12:09:11 by jade-haa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	ft_toupper(char c)
 	return (c);
 }
 
-int	ft_putchar(va_list ap)
+int	ft_putchar_ap(va_list ap)
 {
 	char	c;
 
@@ -30,7 +30,7 @@ int	ft_putchar(va_list ap)
 	return (1);
 }
 
-int	ft_putchar2(char *c, int cap)
+int	ft_putchar_cap(const char *c, int cap)
 {
 	char	upper_c;
 
@@ -56,16 +56,14 @@ int	print_address(va_list ap, char *base)
 	nb = va_arg(ap, void *);
 	len = ft_strlen(base);
 	if (nb == NULL)
-		return (ft_putstring_ad("(nil)"));
-	if (nb == (void *)-1)
-		return (ft_putstring_ad("0xffffffffffffffff"));
+		return (ft_putstring("(nil)"));
 	write(1, "0x", 2);
-	return (2 + (ft_putnbr_base_recursive((long long)nb, len,
+	return (2 + (ft_putnbr_base_recursive((unsigned long long)nb, len,
 				"0123456789abcdef", 0)));
 }
 
-int	ft_putchar_fd(char a, int fd)
+int	ft_putchar(char a)
 {
-	write(fd, &a, 1);
+	write(1, &a, 1);
 	return (1);
 }
