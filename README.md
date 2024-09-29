@@ -17,7 +17,7 @@ Supports the following format specifiers:
 ## How to Use
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/ft_printf.git
+   git clone git@github.com:Jackdehaan/Printf_from_scratch.git
 2. make the static library with:
     ```bash
     make
